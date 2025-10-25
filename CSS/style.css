@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+body {
+    /* font-family: 'Sawarabi Mincho', serif; */
+    font-family: 'josefin Sans', 'sans-serif';
+    color: #121212;
+}
+
+footer p{
+    /* font-size: 1en; */
+    color: rgba(225, 225, 225, .6);
+    background-color: #385587;
+    text-align: center;
+}
+
+.flex-box{
+    display: flex;
+}
+.flex-items ul{
+    display: flex;
+    /* justify-content: flex-end; */
+    gap: 2rem;
+}
