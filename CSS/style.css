@@ -6,18 +6,49 @@ body {
     color: #121212;
 }
 
-footer p{
+footer p {
     /* font-size: 1en; */
     color: rgba(225, 225, 225, .6);
     background-color: #385587;
     text-align: center;
 }
 
-.flex-box{
-    display: flex;
+header{
+    background-color: #385587;
+    height: 100rem;
 }
-.flex-items ul{
+
+.flex-box {
+    background-color: antiquewhite;
     display: flex;
-    /* justify-content: flex-end; */
+    padding: 2rem;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+}
+
+nav{
+    background-color: aquamarine;
+}
+
+.flex-items ul {
+    display: flex;
     gap: 2rem;
+}
+
+.about{
+    background-color: aquamarine;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem 2rem 2rem;
+}
+
+.about h2{
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+.about p{
+    text-align: left;
 }
