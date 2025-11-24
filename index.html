@@ -5,10 +5,18 @@
     <meta charset="UTF-8">
     <meta content="照らしたい系劇団員Vtuber紺空あさひについて" name="description">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet"> -->
+    <meta property="og:title" content="紺空あさひファンサイト">
+    <meta property="og:description" content="照らしたい系劇団員Vtuber紺空あさひについて">
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'cgs7ana',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
 
     <link rel="icon" href="./img/favicon.ico">
     <link rel="stylesheet" href="./CSS/reset.css">
@@ -17,27 +25,91 @@
 </head>
 
 <body>
+
+    <!-- ローディング画面 -->
+    <div class="loading">
+        <img class="rotate-box" src="./img/RD.svg" alt="">
+        <div class="loading-text-box">
+            <span class="loading-text" style="--index: 0">L</span>
+            <span class="loading-text" style="--index: 1">O</span>
+            <span class="loading-text" style="--index: 2">A</span>
+            <span class="loading-text" style="--index: 3">D</span>
+            <span class="loading-text" style="--index: 4">I</span>
+            <span class="loading-text" style="--index: 5">N</span>
+            <span class="loading-text" style="--index: 6">G</span>
+            <span class="loading-text" style="--index: 7">.</span>
+            <span class="loading-text" style="--index: 8">.</span>
+            <span class="loading-text" style="--index: 9">.</span>
+        </div>
+    </div>
+
+    <!-- コンテンツ -->
     <header>
         <div class="flex-box">
-            <h1>紺空あさひ</h1>
+            <h1><a href="#"><img src="./img/icon.svg" alt=""></a></h1>
             <nav class="flex-items">
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#">Contents</a></li>
-                    <li><a href="#">News</a></li>
+                    <li><a href="#contents">Contents</a></li>
+                    <li><a href="#Information">Information</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+    <div class="conts-body">
+        <button class="hamburger">
+            <span class="hamburger_bar"></span>
+            <span class="hamburger_bar"></span>
+            <span class="hamburger_bar"></span>
+        </button>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="">ナビゲーション1</a></li>
+                <li class="nav-item"><a href="">ナビゲーション2</a></li>
+                <li class="nav-item"><a href="">ナビゲーション3</a></li>
+                <li class="nav-item"><a href="">ナビゲーション4</a></li>
+                <li class="nav-item"><a href=""><img src="./img/logo.svg" alt=""></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="MV">
+        <img src="./img/logo.svg" alt="">
+    </div>
     <main>
         <section class="about" id="about">
             <h2>About</h2>
-            <p>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</p>
+            <p class="subtitle">紺空あさひ</p>
+            <p class="text">
+                表現することが大好きな現役劇団員Vtuber。<br>
+                生涯現役を目標に、より表現を磨くべく日々活動中。<br>
+                マイペースな性格で、「好き」にまっしぐら。<br>
+                好きな食べ物はチョコミントとオムライス。
+            </p>
+        </section>
+        <section class="contents" id="contents">
+            <h2>Contents</h2>
+            <p class="subtitle">活動内容</p>
+            <p class="text">
+                演技（声劇、朗読、セリフ練習など）
+                観劇のすすめ！（気になる舞台の紹介、観劇の感想）
+                雑談・企画（いろんなことやってみたい！）
+                ギター練習（2025年2月〜）
+            </p>
+        </section>
+        <section class="contents" id="contents">
+            <h2>Infomation</h2>
+            <p class="subtitle">活動予定など</p>
+            <p class="text">
+                Youtubeにて週3回ほどで配信活動中。
+            </p>
         </section>
     </main>
     <footer>
         <p>© 2025 Kisya. 本サイトは非公式です。<br>キャラクターの権利は各権利者に帰属します。</p>
     </footer>
+    <!-- javascriptのリンクはbody要素の最後 -->
+    <script type="text/javascript" src="./javascript/script.js"></script>
 </body>
 
 </html>
