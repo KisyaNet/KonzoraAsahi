@@ -7,16 +7,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta property="og:title" content="紺空あさひファンサイト">
     <meta property="og:description" content="照らしたい系劇団員Vtuber紺空あさひについて">
-    <script>
-        (function (d) {
-            var config = {
-                kitId: 'cgs7ana',
-                scriptTimeout: 3000,
-                async: true
-            },
-                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
-        })(document);
-    </script>
 
     <link rel="icon" href="./img/favicon.ico">
     <link rel="stylesheet" href="./CSS/reset.css">
@@ -28,7 +18,7 @@
 
     <!-- ローディング画面 -->
     <div class="loading">
-        <img class="rotate-box" src="./img/RD.svg" alt="">
+        <img class="rotate-box" src="./img/loading.svg" alt="">
         <div class="loading-text-box">
             <span class="loading-text" style="--index: 0">L</span>
             <span class="loading-text" style="--index: 1">O</span>
@@ -78,35 +68,83 @@
     </div>
     <main>
         <section class="about" id="about">
-            <h2>About</h2>
-            <p class="subtitle">紺空あさひ</p>
-            <p class="text">
-                表現することが大好きな現役劇団員Vtuber。
-                生涯現役を目標に、より表現を磨くべく日々活動中。
-                マイペースな性格で、「好き」にまっしぐら。
-                好きな食べ物はチョコミントとオムライス。
-            </p>
+            <div class="item fade-in-l">
+                <h2>About</h2>
+                <p>「紺空あさひ」について</p>
+            </div>
+            <div class="item-inner fade-in-r about-text">
+                <img src="./img/konzora.webp" alt="紺空あさひの全身イラスト">
+                <div class="text">
+                    <h3>紺空あさひ</h3>
+                    <div class="reading">Konzora Asahi</div>
+                    <p>照らしたい系劇団員Vtuber。<br>
+                        表現すること大好き！
+                        マイペースな性格ながら、好きなことにはまっすぐ。<br>
+                        日々表現力の高みを目指して活動中。
+                    </p>
+                    <div class="youtube-wrap">
+                        <iframe src="https://www.youtube.com/embed/_aXI6M9z1ZQ?si=XtdLc-3AtRmTkaVr"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
         </section>
         <section class="contents" id="contents">
-            <h2>Contents</h2>
-            <p class="subtitle">活動内容</p>
-            <p class="text">
-                演技（声劇、朗読、セリフ練習など）
-                観劇のすすめ！（気になる舞台の紹介、観劇の感想）
-                雑談・企画（いろんなことやってみたい！）
-                ギター練習（2025年2月〜）
-            </p>
+            <div class="item fade-in-l">
+                <h2>Contents</h2>
+                <p>活動内容</p>
+            </div>
+            <div class="item-inner fade-in-r">
+                <p class="text">
+                    演技（声劇、朗読、セリフ練習など）
+                    観劇のすすめ！（気になる舞台の紹介、観劇の感想）
+                    雑談・企画（いろんなことやってみたい！）
+                    ギター練習（2025年2月〜）
+                </p>
+            </div>
         </section>
-        <section class="contents" id="contents">
-            <h2>Infomation</h2>
-            <p class="subtitle">活動予定など</p>
-            <p class="text">
-                Youtubeにて週3回ほどで配信活動中。
-            </p>
+        <section class="information" id="information">
+            <div class="item fade-in-l">
+                <h2>Information</h2>
+                <p>活動予定など</p>
+            </div>
+            <div class="item-inner fade-in-r">
+                <p class="text">
+                    Youtubeにて週3回ほどで配信活動中<br>
+                    <a href="https://x.com/hashtag/%E3%81%82%E3%81%95%E3%81%B2%E6%9C%AC%E7%95%AA%E4%B8%AD?src=hashtag_click"
+                        target="_blank">
+                        #あさひ本番中
+                    </a>から最新の配信予定をチェック！<br>
+                </p>
+            </div>
         </section>
     </main>
     <footer>
-        <p>© 2025 Kisya. 本サイトは非公式です。<br>キャラクターの権利は各権利者に帰属します。</p>
+        <div class="sns">
+            <h2>Link</h2>
+            <button class="sns-btn">
+                <a href="https://www.youtube.com/@konzora_asahi" target="_blank">
+                    YouTube
+                </a>
+
+            </button>
+            <button class="sns-btn">
+                <a href="https://x.com/Asahi_Rito" target="_blank">
+                    X
+                </a>
+            </button>
+            <button class="sns-btn">
+                <a href="https://marshmallow-qa.com/asahi_rito" target="_blank">
+                    <img src="./img/ma.png" alt="マシュマロ">
+                </a>
+            </button>
+        </div>
+        <div class="credit">
+            <p>© 2025 Kisya<br>キャラクター、およびサムネイル画像の権利は各権利者に帰属します。</p>
+        </div>
     </footer>
     <!-- javascriptのリンクはbody要素の最後 -->
     <script type="text/javascript" src="./javascript/script.js"></script>
