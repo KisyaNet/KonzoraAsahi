@@ -40,7 +40,7 @@ window.addEventListener("load", () => {
     }, 300);
 });
 
-const options = {
+const fade_in_options = {
     threshold: 0.5
 };
 
@@ -53,8 +53,34 @@ const fadeInCallback = (entries, observer) => {
     });
 };
 
-const observer = new IntersectionObserver(fadeInCallback, options);
+const observer = new IntersectionObserver(fadeInCallback, fade_in_options);
 
 // フェード対象を監視
 document.querySelectorAll('.fade-in-l').forEach(el => observer.observe(el));
 document.querySelectorAll('.fade-in-r').forEach(el => observer.observe(el));
+
+
+const slider_options = {
+    type: "loop",
+    pagination: true,
+    drag: "true",
+    hight: 10000,
+    autoplay: true,
+    interval: 5000,
+    gap: 10,
+    perPage: 3,
+    perMove: 1,
+    breakpoints: {
+        500: {
+            perPage: 1,
+        },
+    },
+    outView: {
+        autoplay: false,
+    },
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    const splide = new Splide(".splide", slider_options);
+    splide.mount(window.splide.Extensions);
+});
