@@ -3,17 +3,19 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 4rem;
-}
-
-body {
-    font-family: 'josefin Sans', 'sans-serif';
-    color: #121212;
     background: #1894d2;
     background-image: url(../img/BR.webp);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    height: 100lvh;
+}
+
+body {
+    font-family: 'josefin Sans', 'sans-serif';
+    color: #121212;
+
 }
 
 /* スクロール禁止 */
@@ -26,6 +28,8 @@ body {
     /*ローディング画面の縦横幅を画面いっぱいになるように指定*/
     width: 100vw;
     height: 100vh;
+    width: 100svw;
+    height: 100svh;
     z-index: 999;
     /*ローディング画面の表示位置を固定*/
     position: fixed;
@@ -241,6 +245,8 @@ h1 {
     display: block;
     height: 100vh;
     width: 100vw;
+    width: 100svw;
+    height: 100svh;
     background-image: url(../img/MV_M.webp);
     /* object-fit: cover; */
     background-size: cover;
@@ -364,6 +370,61 @@ section {
     border: 0;
 }
 
+.splide-wrap {
+    padding: 1rem 0.5rem 2.5rem 0.5rem;
+}
+
+.splide__slide {
+    overflow: hidden;
+}
+
+.splide__slide img {
+    padding-top: 0;
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+    transition: transform .3s ease;
+}
+
+.splide__slide img:hover {
+    transform: scale(1.1);
+}
+
+.splide__arrow {
+    visibility: hidden;
+}
+
+.splide__pagination {
+    bottom: -1.5rem;
+}
+
+.splide__pagination__page {
+    background: #ccc !important;
+    width: 40px;
+    height: 5px;
+    margin: 0 5px;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.splide__pagination__page.is-active {
+    background: #0c529a !important;
+    transform: scale(1.3);
+}
+
+.playlists {
+    display: block;
+    background-color: #1894d2;
+    color: #f2f2f2;
+    font-size: 1.2rem;
+    font-weight: bold;
+    width: 12rem;
+    padding: 0.8rem 1rem 0.8rem 1rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 0 auto;
+}
+
 .sns {
     margin-top: 2rem;
     padding: 2rem 0;
@@ -420,12 +481,9 @@ section {
     }
 
     .item {
-        /* background: #f2f2f2; */
-        /* text-align: center; */
         box-shadow: 0 6px 0 #ffde2a;
         height: 4rem;
         margin-bottom: 0.2rem;
-        /* margin: 0 auto; */
         width: 90%;
     }
 
@@ -447,16 +505,25 @@ section {
         margin: 3rem 15%;
     }
 
-    .item-inner img {
+    .about .item-inner img {
         width: 50%;
         height: 80vh;
         margin-bottom: 2rem;
     }
 
-    .text {
-        margin: auto auto;
+    .about .text {
+        margin: auto;
         padding: 2rem;
         width: 100%;
+    }
+
+    .contents .item-inner {
+        display: block;
+    }
+
+    .splide__arrow {
+        visibility: visible;
+
     }
 }
 
