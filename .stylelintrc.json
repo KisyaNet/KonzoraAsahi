@@ -1,0 +1,24 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/properties-order": [
+      [
+        {
+          "groupName": "Layout",
+          "properties": ["display", "position", "top", "right", "bottom", "left"]
+        },
+        {
+          "groupName": "Box Model",
+          "properties": ["width", "height", "margin", "padding", "border"]
+        },
+        {
+          "groupName": "Typography",
+          "properties": ["font", "font-size", "line-height", "color"]
+        }
+      ],
+      { "unspecified": "bottomAlphabetical" }
+    ]
+  },
+  "formatter": "stylelint-formatter-pretty"
+}
