@@ -64,11 +64,10 @@ const slider_options = {
     type: "loop",
     pagination: true,
     drag: "true",
-    hight: 10000,
     autoplay: true,
     interval: 5000,
     gap: 10,
-    perPage: 3,
+    perPage: 2,
     perMove: 1,
     breakpoints: {
         500: {
