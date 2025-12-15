@@ -1,49 +1,44 @@
-"use strict";
+const fade_in_options = { threshold: 0.5 };
 
-// ハンバーガーメニューの開閉処理
-document.addEventListener("DOMContentLoaded", function () {
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    // ページ開始直後のスクロール禁止
+    document.body.classList.add("no-scroll");
+
+    // ハンバーガーメニュー
     const hamburger = document.querySelector(".hamburger");
     const nav = document.querySelector(".nav");
+    const links = document.querySelectorAll(".nav-link");
 
-    if (!hamburger || !nav) return;
 
-    hamburger.addEventListener("click", function () {
-        // toggle hamburger bars
-        this.querySelectorAll(".hamburger_bar").forEach(function (el) {
-            el.classList.toggle("is_active");
-        });
-        // toggle nav visibility
-        nav.classList.toggle("is_active");
-        // スクロール制御：nav が表示中はスクロール禁止
-        if (nav.classList.contains("is_active")) {
+    const toggleMenu = () => {
+        hamburger.querySelectorAll(".hamburger-bar")
+            .forEach(el => el.classList.toggle("is-active"));
+
+        nav.classList.toggle("is-active");
+
+        if (nav.classList.contains("is-active")) {
             document.body.classList.add("no-scroll");
         } else {
             document.body.classList.remove("no-scroll");
         }
+    };
+
+    hamburger.addEventListener("click", toggleMenu);
+
+    // ページ内リンクがクリックされたときの処理
+    links.forEach(link => {
+        link.addEventListener("click", (event) => {
+            if (nav.classList.contains("is-active")) {
+                toggleMenu(); 
+            }
+        });
     });
 });
 
-//ローディング画面を取得
-const loading = document.querySelector(".loading");
-
-// ページ開始直後はスクロール禁止
-window.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("no-scroll");
-});
-
-//ページの読み込み完了時に処理を実行
-window.addEventListener("load", () => {
-    //3秒後にローディング画面を非表示にする
-    setTimeout(() => {
-        loading.classList.add("loaded");
-        document.body.classList.remove("no-scroll");
-    }, 300);
-});
-
-const fade_in_options = {
-    threshold: 0.5
-};
-
+// IntersectionObserver（フェードイン）
 const fadeInCallback = (entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -54,32 +49,26 @@ const fadeInCallback = (entries, observer) => {
 };
 
 const observer = new IntersectionObserver(fadeInCallback, fade_in_options);
-
-// フェード対象を監視
-document.querySelectorAll('.fade-in-l').forEach(el => observer.observe(el));
-document.querySelectorAll('.fade-in-r').forEach(el => observer.observe(el));
+document.querySelectorAll('.fade-in-l, .fade-in-r, .fade-in-zoom, .fade-in-up')
+    .forEach(el => observer.observe(el));
 
 
-const slider_options = {
-    type: "loop",
-    pagination: true,
-    drag: "true",
-    autoplay: true,
-    interval: 5000,
-    gap: 10,
-    perPage: 2,
-    perMove: 1,
-    breakpoints: {
-        500: {
-            perPage: 1,
-        },
-    },
-    outView: {
-        autoplay: false,
-    },
-};
+// ローディング画面
+window.addEventListener("load", () => {
+    const loading = document.querySelector(".loading");
+    const mainVisual = document.querySelector(".main-visual");
+    const mainVisualL = document.querySelector(".main-visual-l");
+    const logo = document.querySelector(".konzora-logo");
 
-document.addEventListener("DOMContentLoaded", () => {
-    const splide = new Splide(".splide", slider_options);
-    splide.mount(window.splide.Extensions);
+    setTimeout(() => {
+        loading.classList.add("loaded");
+        document.body.classList.remove("no-scroll");
+
+        loading.addEventListener("transitionend", () => {
+            mainVisual.classList.add("show");
+            mainVisualL.classList.add("show");
+            logo.classList.add("show");
+        }, { once: true }); 
+
+    }, 2000);
 });

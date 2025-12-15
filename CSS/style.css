@@ -1,26 +1,25 @@
 @charset "UTF-8";
 
 html {
-    height: 100lvh;
+    height: 100svh;
     background: #1894d2;
     background-attachment: fixed;
     background-image: url("../img/BR.webp");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    font-display: swap;
     scroll-behavior: smooth;
     scroll-padding-top: 4rem;
 }
 
 body {
     color: #121212;
-    font-family: 'josefin Sans', sans-serif;
-
+    font-family: "josefin Sans", sans-serif;
 }
 
 /* スクロール禁止 */
 .no-scroll {
-    height: 100vh;
     overflow: hidden;
 }
 
@@ -33,7 +32,7 @@ body {
     left: 0;
 
     /* ローディング画面の縦横幅を画面いっぱいになるように指定 */
-    width: 100vw;
+    width: 100%;
     width: 100svw;
     height: 100vh;
     height: 100svh;
@@ -60,17 +59,15 @@ body {
     color: #385587;
     animation-delay: calc(0.25s * var(--index));
     animation-duration: 2.5s;
-    animation-fill-mode: forwards;
     animation-iteration-count: infinite;
-    animation-name: loadingScale, loadingMove;
-    animation-timing-function: var(--easeInOutQuint), var(--easeOutCubic);
+    animation-name: loading-scale, loading-move;
     font-weight: 700;
     margin-top: 2rem;
     text-align: center;
     transform-origin: 50% 85%;
 }
 
-@keyframes loadingMove {
+@keyframes loading-move {
     0% {
         translate: 0 0;
     }
@@ -92,7 +89,7 @@ body {
     }
 }
 
-@keyframes loadingScale {
+@keyframes loading-scale {
     0% {
         scale: 1 1;
     }
@@ -121,11 +118,11 @@ body {
 /* 回転する要素のスタイル */
 .rotate-box {
     width: 10rem;
-    animation: rotateAnimation 5s linear infinite;
+    animation: rotate-animation 5s linear infinite;
 }
 
 /* アニメーションの設定 */
-@keyframes rotateAnimation {
+@keyframes rotate-animation {
     from {
         transform: rotate(0deg);
     }
@@ -140,9 +137,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-
-    /* background-color: rgba(31, 33, 69, 0.2); */
-    width: 100vw;
+    width: 100%;
     height: inherit;
     color: #28e5eb;
     z-index: 100;
@@ -165,6 +160,17 @@ h1 {
     padding-right: 2rem;
 }
 
+.flex-items ul li a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: .2s;
+}
+
+.flex-items ul li a:hover {
+    color: #ffde2a;
+    text-decoration: underline;
+}
+
 .hamburger {
     position: fixed;
     top: 16px;
@@ -174,7 +180,7 @@ h1 {
     z-index: 100;
 }
 
-.hamburger_bar {
+.hamburger-bar {
     display: block;
     position: absolute;
     left: 0;
@@ -184,32 +190,32 @@ h1 {
     transition: top 0.24s, transform 0.24s, opacity 0.24s;
 }
 
-.hamburger_bar:nth-child(1) {
+.hamburger-bar:nth-child(1) {
     top: 0;
 }
 
-.hamburger_bar:nth-child(2) {
+.hamburger-bar:nth-child(2) {
     top: 50%;
     transform: translateY(-50%);
 }
 
-.hamburger_bar:nth-child(3) {
+.hamburger-bar:nth-child(3) {
     top: 100%;
     transform: translateY(-100%);
 }
 
-.hamburger_bar.is_active:nth-child(1) {
+.hamburger-bar.is-active:nth-child(1) {
     top: 50%;
     transform: translateY(-50%) rotate(135deg);
 }
 
-.hamburger_bar.is_active:nth-child(2) {
+.hamburger-bar.is-active:nth-child(2) {
     /* transition: opacity 2s; */
     opacity: 0;
     transform: translate(50%, -50%);
 }
 
-.hamburger_bar.is_active:nth-child(3) {
+.hamburger-bar.is-active:nth-child(3) {
     top: 50%;
     transform: translateY(-50%) rotate(-135deg);
 }
@@ -217,7 +223,7 @@ h1 {
 .nav {
     display: flex;
     position: fixed;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     color: #f2f2f2;
     align-items: center;
@@ -230,42 +236,65 @@ h1 {
     z-index: 99;
 }
 
-.nav.is_active {
+.nav.is-active {
     opacity: 1;
     pointer-events: auto;
 }
 
+.nav-logo {
+    width: 150px;
+    margin-top: 0.8rem;
+}
+
 .nav-list {
     display: flex;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     flex-direction: column;
     gap: 2.5rem;
 }
 
-.MV {
-    display: block;
-    width: 100vw;
-    width: 100svw;
-    height: 100vh;
-    height: 100svh;
-    background-image: url("../img/MV_M.webp");
-    background-position: center center;
-
-    /* object-fit: cover; */
+.main-visual-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 5/7;
+    background-color: #1f2145;
     background-size: cover;
+    overflow: hidden;
 }
 
-.MV img {
+.main-visual {
     position: absolute;
-    bottom: 1rem;
-    left: 0;
+    bottom: 0;
     width: 100%;
-    padding: 1rem 1.5rem 0 .5rem;
+    opacity: 0;
+    transform: translateY(4rem);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.main-visual.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.konzora-logo {
+    position: absolute;
+    bottom: 0;
+    padding: 1rem 1.5rem 1rem 0.5rem;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: 0.5s ease-out;
+    transition-delay: 0.5s;
+}
+
+.konzora-logo.show {
+    opacity: 1;
+    transform: scale(1);
 }
 
 section {
     align-items: center;
-    padding-top: 2.5rem;
+    margin-top: 5rem;
+    overflow: hidden;
 }
 
 .fade-in-l {
@@ -327,9 +356,9 @@ section {
     overflow: hidden;
 }
 
-.item-inner img {
+.standing-picture {
     width: 100%;
-    height: 60vh;
+    height: 78vh;
     object-fit: scale-down;
     padding-top: 2rem;
 }
@@ -346,7 +375,7 @@ section {
 }
 
 .text p {
-    margin-top: 1rem;
+    margin: 1rem 1rem 0;
     text-align: justify;
 }
 
@@ -373,49 +402,7 @@ section {
     border: 0;
 }
 
-.splide-wrap {
-    padding: 1rem 0.5rem 2.5rem;
-}
-
-.splide__slide {
-    overflow: hidden;
-}
-
-.splide__slide img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    padding-top: 0;
-    transition: transform .3s ease;
-}
-
-.splide__slide img:hover {
-    transform: scale(1.1);
-}
-
-.splide__arrow {
-    visibility: hidden;
-}
-
-.splide__pagination {
-    bottom: -1.5rem;
-}
-
-.splide__pagination__page {
-    width: 40px;
-    height: 5px;
-    margin: 0 5px;
-    background: #ccc !important;
-    border-radius: 2px;
-    opacity: 1;
-}
-
-.splide__pagination__page.is-active {
-    background: #0c529a !important;
-    transform: scale(1.3);
-}
-
-.playlists {
+.link-btn{
     display: block;
     width: 12rem;
     margin: 0 auto;
@@ -430,10 +417,17 @@ section {
     transition: .2s;
 }
 
-.playlists:hover {
+.link-btn:hover{
     color: #1894d2;
     background-color: #f2f2f2;
     outline: auto;
+}
+
+.playlists {
+    width: 12rem;
+    margin: 0 auto 1rem;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
 }
 
 .honbanchu {
@@ -447,10 +441,18 @@ section {
     color: #ffde2a;
 }
 
+.schedule-table {
+    display: block;
+    width: 100%;
+    margin: 1rem auto;
+    border-radius: 8px;
+    text-align: center;
+}
+
 .sns {
     padding: 2rem 0;
     background-color: #f2f2f2;
-    margin-top: 2rem;
+    margin-top: 5rem;
     text-align: center;
 }
 
@@ -462,16 +464,9 @@ section {
 }
 
 .sns-btn {
-    display: block;
     width: 8rem;
-    margin: 0.5rem auto;
+    margin: 0.5rem auto 1rem;
     padding: 0.8rem;
-    font-size: 1.2rem;
-    color: #f2f2f2;
-    background-color: #1894d2;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-bottom: 1rem;
 }
 
 .sns-btn img {
@@ -487,18 +482,40 @@ section {
 }
 
 
-@media screen and (width >= 960px) {
+@media screen and (width > 960px) {
     /* PC時非表示にする */
     .hamburger {
         display: none;
     }
 
-    .MV {
-        background-image: url("../img/MV_L.webp");
+    .main-visual-wrap {
+        aspect-ratio: 16/7;
     }
 
-    .MV img {
-        width: 40%;
+    .main-visual {
+        display: none;
+    }
+
+    .main-visual-l {
+        position: absolute;
+        bottom: -30%;
+        width: 100%;
+        margin: auto 0;
+        opacity: 0;
+        transform: translateY(4rem);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .main-visual-l.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .konzora-logo {
+        bottom: 2rem;
+        left: 2rem;
+        width: 40rem;
+        padding: 0;
     }
 
     .item {
@@ -526,11 +543,10 @@ section {
         margin: 3rem 15%;
     }
 
-
-    .about .item-inner img {
-        width: 50%;
-        height: 80vh;
-        margin-bottom: 2rem;
+    .standing-picture {
+        width: 40%;
+        margin: auto 2rem;
+        padding-top: 0;
     }
 
     .about .text {
@@ -542,15 +558,14 @@ section {
     .contents .item-inner {
         display: block;
     }
-
-    .splide__arrow {
-        visibility: visible;
-
-    }
 }
 
 @media screen and (width <= 960px) {
     .flex-items {
+        display: none;
+    }
+
+    .main-visual-l {
         display: none;
     }
 }

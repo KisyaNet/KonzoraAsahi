@@ -1,0 +1,49 @@
+/* stylelint-disable selector-class-pattern */
+
+.splide-wrap {
+    padding: 1rem 0.5rem 2.5rem;
+}
+
+.splide__slide {
+    overflow: hidden;
+}
+
+.splide__slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    padding-top: 0;
+    transition: transform .3s ease;
+}
+
+.splide__slide img:hover {
+    transform: scale(1.1);
+}
+
+.splide__arrow {
+    visibility: hidden;
+}
+
+.splide__pagination {
+    bottom: -1.5rem;
+}
+
+.splide__pagination__page {
+    width: 40px;
+    height: 5px;
+    margin: 0 5px;
+    background: #ccc !important;
+    border-radius: 2px;
+    opacity: 1;
+}
+
+.splide__pagination__page.is-active {
+    background: #0c529a !important;
+    transform: scale(1.3);
+}
+
+@media screen and (width >= 960px) {
+    .splide__arrow { 
+        visibility: visible;
+    }
+}

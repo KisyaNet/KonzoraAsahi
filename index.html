@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
+<head prefix="og: https://ogp.me/ns#">
     <meta charset="UTF-8">
     <meta content="照らしたい系劇団員Vtuber紺空あさひについて" name="description">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta property="og:title" content="紺空あさひファンサイト">
     <meta property="og:description" content="照らしたい系劇団員Vtuber紺空あさひについて">
-
-    <link rel="icon" href="./img/favicon.ico">
+    <meta property="og:image" content="./img/ogp.webp">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="./img/icon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./CSS/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="./CSS/splide-overwrite.css">
     <link rel="stylesheet" href="./CSS/style.css">
     <title>紺空あさひ</title>
 </head>
@@ -43,29 +45,33 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#contents">Contents</a></li>
                     <li><a href="#information">Information</a></li>
+                    <li><a href="#sns">SNS</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <div class="conts-body">
         <button class="hamburger">
-            <span class="hamburger_bar"></span>
-            <span class="hamburger_bar"></span>
-            <span class="hamburger_bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
         </button>
 
         <nav class="nav">
             <ul class="nav-list">
-                <li class="nav-item"><a href="">ナビゲーション1</a></li>
-                <li class="nav-item"><a href="">ナビゲーション2</a></li>
-                <li class="nav-item"><a href="">ナビゲーション3</a></li>
-                <li class="nav-item"><a href="">ナビゲーション4</a></li>
-                <li class="nav-item"><a href=""><img src="./img/logo.svg" alt=""></a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Top</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contents">Contents</a></li>
+                <li class="nav-item"><a class="nav-link" href="#information">Information</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sns">SNS</a></li>
+                <li class="nav-logo"><img src="./img/logo.svg" alt="紺空あさひロゴ"></li>
             </ul>
         </nav>
     </div>
-    <div class="MV">
-        <img src="./img/logo.svg" alt="">
+    <div class="main-visual-wrap">
+        <img class="main-visual fade-in-up" src="./img/MV_M.webp" alt="">
+        <img class="main-visual-l fade-in-up" src="./img/MV_L.webp" alt="">
+        <img class="konzora-logo fade-in-zoom" src="./img/logo.svg" alt="">
     </div>
     <main>
         <section class="about" id="about">
@@ -73,15 +79,15 @@
                 <h2>About</h2>
                 <p>「紺空あさひ」について</p>
             </div>
-            <div class="item-inner fade-in-r about-text">
-                <img src="./img/konzora.webp" alt="紺空あさひの全身イラスト">
+            <div class="item-inner fade-in-r">
+                <img class="standing-picture" src="./img/konzora.webp" alt="紺空あさひの全身イラスト">
                 <div class="text">
                     <h3>紺空あさひ</h3>
                     <div class="reading">Konzora Asahi</div>
-                    <p>照らしたい系劇団員Vtuber。<br>
-                        表現すること大好き！
-                        マイペースな性格ながら、好きなことにはまっすぐ。<br>
-                        日々表現力の高みを目指して活動中。
+                    <p>照らしたい系劇団員Vtuber。<br> 
+                        現役劇団員。自分の表現を届けるため、電子の世界にやってきた。<br>
+                        「来るもの拒まず、去る者追わず」のスタンスで、リスナーさんたちと一緒に楽しい時間を過ごしたいと思っている。<br>
+                        役者としての経験を活かした演技系配信のみならず、素朴なテーマの企画配信や雑談配信も行うなど、日々挑戦中。<br>
                     </p>
                     <div class="youtube-wrap">
                         <iframe src="https://www.youtube.com/embed/_aXI6M9z1ZQ?si=XtdLc-3AtRmTkaVr"
@@ -90,7 +96,6 @@
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
-
             </div>
         </section>
         <section class="contents" id="contents">
@@ -99,12 +104,13 @@
                 <p>活動内容</p>
             </div>
             <div class="item-inner fade-in-r">
-                <p class="text">
-                    演技（声劇、朗読、セリフ練習など）
-                    観劇のすすめ！（気になる舞台の紹介、観劇の感想）
-                    雑談・企画（いろんなことやってみたい！）
-                    ギター練習（2025年2月〜）
-                </p>
+                <div class="text">
+                    <p>
+                        YouTubeで配信活動中。<br>
+                        演技系コンテンツをメインに、ギター練習配信や企画、雑談配信なども行っています。<br>
+                        下のサムネイルから各コンテンツをチェック！
+                    </p>
+                </div>
                 <div class="splide-wrap">
                     <div class="splide" aria-label="無限ループスライダー">
                         <div class="splide__track">
@@ -143,8 +149,8 @@
                         </div>
                     </div>
                 </div>
-                <a class="playlists" href="https://www.youtube.com/@Konzora_Asahi/playlists" target="_blank">
-                    もっと見る
+                <a class="playlists link-btn" href="https://www.youtube.com/@Konzora_Asahi/playlists" target="_blank">
+                    View More
                 </a>
             </div>
         </section>
@@ -154,39 +160,44 @@
                 <p>活動予定など</p>
             </div>
             <div class="item-inner fade-in-r">
-                <p class="text">
-                    YouTubeにて週3回ほど配信活動中<br>
-                    <a class="honbanchu" href="https://x.com/hashtag/%E3%81%82%E3%81%95%E3%81%B2%E6%9C%AC%E7%95%AA%E4%B8%AD?src=hashtag_click"
-                        target="_blank">
-                        #あさひ本番中
-                    </a>で最新の配信予定をチェック！<br>
-                </p>
+                <div class="text">
+                    <p>
+                        YouTubeにて週3回ほど配信活動中<br>
+                        配信タグ
+                        <a class="honbanchu"
+                            href="https://x.com/hashtag/%E3%81%82%E3%81%95%E3%81%B2%E6%9C%AC%E7%95%AA%E4%B8%AD?src=hashtag_click"
+                            target="_blank">
+                            #あさひ本番中
+                        </a>で最新の情報をチェック！<br>
+                    </p>
+                    <img class="schedule-table" src="./img/schedule.webp" alt="紺空あさひの配信予定表">
+                </div>
             </div>
         </section>
     </main>
     <footer>
-        <div class="sns">
+        <div class="sns" id="sns">
             <h2>Link</h2>
-                <a class="sns-btn" href="https://www.youtube.com/@konzora_asahi" target="_blank">
-                    YouTube
-                </a>
-                <a class="sns-btn" href="https://x.com/Asahi_Rito" target="_blank">
-                    X
-                </a>
-                <a class="sns-btn" href="https://marshmallow-qa.com/asahi_rito" target="_blank">
-                    <img src="./img/ma.png" alt="マシュマロ">
-                </a>
+            <a class="sns-btn link-btn" href="https://www.youtube.com/@konzora_asahi" target="_blank">
+                YouTube
+            </a>
+            <a class="sns-btn link-btn" href="https://x.com/Asahi_Rito" target="_blank">
+                X
+            </a>
+            <a class="sns-btn link-btn" href="https://marshmallow-qa.com/asahi_rito" target="_blank">
+                <img src="./img/ma.png" alt="マシュマロ">
+            </a>
         </div>
         <div class="credit">
             <p>© 2025 Kisya<br>キャラクター、およびサムネイル画像の権利は各権利者に帰属します。</p>
         </div>
     </footer>
     <!-- javascriptのリンクはbody要素の最後 -->
-    <!-- Splide 本体 -->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script
         src="https://cdn.jsdelivr.net/npm/@splidejs/splide-extension-intersection@0.2.0/dist/js/splide-extension-intersection.min.js"></script>
     <script type="text/javascript" src="./javascript/script.js"></script>
+    <script type="text/javascript" src="./javascript/splide-settings.js"></script>
 </body>
 
 </html>
